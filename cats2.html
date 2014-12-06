@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<img src = "icon_51697.png" id = "meow" alt = "meow" height = "1" width = "1">
+<!-- Load the Paper.js library -->
+<script type="text/javascript" src="paperjs-v0.9.20/dist/paper-full.js"></script>
+<!-- Define inlined PaperScript associate it with myCanvas -->
+<script type="text/paperscript" canvas="myCanvas">
+
+	var raster_cat = new Raster('meow');
+	raster_cat.position = view.center;
+	raster_cat.scale(0.2);
+	raster_cat.rotate(45);
+
+
+	// Create a symbol from the path:
+	var symbol_cat = new Symbol(raster_cat);
+
+	// Place 30 instances of the symbol in the project in random
+	// positions in the view:
+	//for (var i = 0; i < 30; i++) {
+	var position = view.size * Point.random();
+	var placed = symbol_cat.place(position);
+	//}
+
+	function onFrame(event) {
+		// Each frame, rotate the definition
+		// of the symbol by 1 degree:
+		//var items = [5,-5];
+		//var randomItem = items[Math.floor(Math.random()*items.length)];
+		symbol_cat.definition.rotate(1);
+	}
+
+	function onMouseDown(event) {
+		symbol_cat.place(event.point);
+	}
+</script>
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>

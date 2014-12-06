@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Load the Paper.js library -->
+<script type="text/javascript" src="paperjs-v0.9.20/dist/paper-full.js"></script>
+<!-- Define inlined PaperScript associate it with myCanvas -->
+<script type="text/paperscript" canvas="myCanvas">
+//top of kitty's head
+	var path_head = new Path();
+	path_head.strokeColor = 'black';
+	path_head.strokeWidth = 3;
+	var firstPoint = new Point(580,250);
+	path_head.add(firstPoint);
+	var throughPoint = new Point(625,240);
+	var toPoint = new Point(650,250);
+	path_head.arcTo(throughPoint,toPoint);
+//kitty's ears
+	var path_ear1 = new Path();
+	path_ear1.strokeColor = 'black';
+	path_ear1.strokeWidth = 3;
+	var ear1FirstPoint = new Point(584,247);
+	path_ear1.add(ear1FirstPoint);
+	var ear1ThroughPoint = new Point(576,240);
+	var ear1EndPoint = new Point(572,239);
+	path_ear1.arcTo(ear1ThroughPoint,ear1EndPoint);
+	var ear1ThroughPoint2 = new Point(592,239);
+	var ear1EndPoint2 = new Point(594,243);
+	path_ear1.arcTo(ear1ThroughPoint2,ear1EndPoint2);
+
+	var path_ear2 = new Path();
+	path_ear2.strokeColor = 'black';
+	path_ear2.strokeWidth = 3;
+	var ear2FirstPoint = new Point(636,244);
+	path_ear2.add(ear2FirstPoint);
+	var ear2ThroughPoint = new Point(637,237);
+	var ear2EndPoint = new Point(645,229);
+	path_ear2.arcTo(ear2ThroughPoint,ear2EndPoint);
+	var ear2ThroughPoint2 = new Point(648,239);
+	var ear2EndPoint2 = new Point(646,248);
+	path_ear2.arcTo(ear2ThroughPoint2,ear2EndPoint2);	
+//kitty's eyes
+	var eye1Point = new Point(600,257);
+	var eye2Point = new Point(630,257);
+	var circle_eye1 = new Path.Circle(eye1Point,4);
+	var circle_eye2 = new Path.Circle(eye2Point,4);
+	circle_eye1.strokeColor = 'black';
+	circle_eye2.strokeColor = 'black';
+	circle_eye1.strokeWidth = 3;
+	circle_eye2.strokeWidth = 3;
+//kitty's nose
+	var path_nose = new Path();
+	path_nose.strokeColor = 'black';
+	path_nose.strokeWidth = 3;
+	var noseFirstPoint = new Point(613,265);
+	path_nose.add(noseFirstPoint);
+	var noseThroughPoint = new Point(614,264);
+	var noseEndPoint = new Point(617,263);
+	path_nose.arcTo(noseThroughPoint,noseEndPoint);
+//kitty's whiskers
+	var path_whisker1 = new Path();
+	path_whisker1.strokeColor = 'black';
+	path_whisker1.strokeWidth = 2;
+	path_whisker1.add(new Point(587,260),new Point(560,250));
+	var path_whisker2 = new Path();
+	path_whisker2.strokeColor = 'black';
+	path_whisker2.strokeWidth = 2;
+	path_whisker2.add(new Point(587,265),new Point(560,270));
+	var path_whisker3 = new Path();
+	path_whisker3.strokeColor = 'black';
+	path_whisker3.strokeWidth = 2;
+	path_whisker3.add(new Point(645,265),new Point(672,270));
+	var path_whisker4 = new Path();
+	path_whisker4.strokeColor = 'black';
+	path_whisker4.strokeWidth = 2;
+	path_whisker4.add(new Point(645,260),new Point(672,250));
+//kitty body fur
+	// var path_fur1 = new Path();
+	// path_fur1.strokeColor = 'black';
+	// path_fur1.strokeWidth = 3;
+	// path_fur1.add(new Point(585,255),new Point(575,258));
+	// var path_fur1 = new Path();
+	// path_fur1.strokeColor = 'black';
+	// path_fur1.strokeWidth = 3;
+	// path_fur1.add(new Point(585,263),new Point(575,266));
+//kitty body
+	var path_body_l = new Path();
+	path_body_l.strokeColor = 'black';
+	path_body_l.strokeWidth = 3;
+	bodyFirstPoint_l = new Point(580,280);
+	path_body_l.add(bodyFirstPoint_l);
+	bodyThroughPoint_l = new Point(565,330);
+	bodyEndPoint_l = new Point(580,400);
+	path_body_l.arcTo(bodyThroughPoint_l,bodyEndPoint_l);
+
+	var path_body_r = new Path();
+	path_body_r.strokeColor = 'black';
+	path_body_r.strokeWidth = 3;
+	bodyFirstPoint_r = new Point(647,280);
+	path_body_r.add(bodyFirstPoint_r);
+	bodyThroughPoint_r = new Point(660,330);
+	bodyEndPoint_r = new Point(647,390);
+	path_body_r.arcTo(bodyThroughPoint_r,bodyEndPoint_r);
+//kitty arms
+	var path_arm_l = new Path();
+	path_arm_l.strokeColor = 'black';
+	path_arm_l.strokeWidth = 3;
+	armFirstPoint_l = new Point(593,310);
+	path_arm_l.add(armFirstPoint_l);
+	armThroughPoint_l = new Point(591,360);
+	armEndPoint_l = new Point(600,393);
+	path_arm_l.arcTo(armThroughPoint_l,armEndPoint_l);
+
+	var path_arm_r = new Path();
+	path_arm_r.strokeColor = 'black';
+	path_arm_r.strokeWidth = 3;
+	armFirstPoint_r = new Point(628,290);
+	path_arm_r.add(armFirstPoint_r);
+	armThroughPoint_r = new Point(633,320);
+	armEndPoint_r = new Point(631,380);
+	path_arm_r.arcTo(armThroughPoint_r,armEndPoint_r);
+//kitty tail
+	var path_tail = new Path();
+	path_tail.strokeColor = 'black';
+	path_tail.strokeWidth = 3;
+	tailFirstPoint1 = new Point(655,390);
+	path_tail.add(tailFirstPoint1);
+	tailThroughPoint1 = new Point(675,393);
+	tailEndPoint1 = new Point(675,420);
+	path_tail.arcTo(tailThroughPoint1,tailEndPoint1);
+	tailThroughPoint2 = new Point(640,432);
+	tailEndPoint2 = new Point(620,430);
+	path_tail.arcTo(tailThroughPoint2,tailEndPoint2);
+	tailThroughPoint3 = new Point(638,462);
+	tailEndPoint3 = new Point(638,475);
+	path_tail.arcTo(tailThroughPoint3,tailEndPoint3);
+	tailThroughPoint4 = new Point(630,475);
+	tailEndPoint4 = new Point(625,462)
+	path_tail.arcTo(tailThroughPoint4,tailEndPoint4);
+	tailThroughPoint5 = new Point(630,435);
+	tailEndPoint5 = new Point(645,400);
+	path_tail.arcTo(tailThroughPoint5,tailEndPoint5)
+	
+
+
+	
+</script>
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>
